@@ -26,13 +26,24 @@ sendInput.onclick = () => {
   endBlock.style.display = 'flex'
 }
 
-
 let message = 'Because you very kind and good looking!😋'
 let index = 0
-input.onkeydown = (e) => {
-  e.preventDefault()
+
+function showInput() {
   if (index < message.length) {
     input.value += message[index]
     index++
-  }
+  } else sendInput.removeAttribute('disabled')
+}
+
+input.addEventListener("compositionstart", (e) => {
+  e.preventDefault()
+  input.readOnly = true
+  showInput()
+});
+
+input.onkeypress = (e) => {
+  e.preventDefault()
+  input.readOnly = true
+  showInput()
 }
