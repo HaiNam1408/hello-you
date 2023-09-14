@@ -42,8 +42,8 @@ input.addEventListener("compositionstart", (e) => {
   showInput()
 });
 
-input.onkeypress = (e) => {
+input.addEventListener("keydown", (e) => {
   e.preventDefault()
   input.readOnly = true
   showInput()
-}
+});
