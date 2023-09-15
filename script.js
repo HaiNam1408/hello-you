@@ -19,6 +19,7 @@ btnNo.onmousemove = () => {
 btnYes.onclick = () => {
   main.style.display = 'none'
   typeBlock.style.display = 'flex'
+  input.focus()
 }
 
 sendInput.onclick = () => {
@@ -33,21 +34,30 @@ function showInput() {
   if (index < message.length) {
     input.value += message[index]
     index++
-  } else sendInput.removeAttribute('disabled')
+  } else {
+    sendInput.removeAttribute('disabled')
+    input.setAttribute('readOnly')
+  }
 }
 
 input.addEventListener("compositionstart", (e) => {
   e.preventDefault()
   input.readOnly = true
   showInput()
-  setTimeout(() => { input.readOnly = false }, 0)
-  setTimeout(() => { input.focus }, 0)
+  setTimeout(() => {
+    input.readOnly = false
+    input.focus
+  }, 0)
+  // setTimeout(() => { input.focus }, 0)
 });
 
 input.addEventListener("keydown", (e) => {
   e.preventDefault()
   input.readOnly = true
   showInput()
-  setTimeout(() => { input.readOnly = false }, 0)
-  setTimeout(() => { input.focus }, 0)
+  setTimeout(() => {
+    input.readOnly = false
+    input.focus
+  }, 0)
+  // setTimeout(() => { input.focus }, 0)
 });

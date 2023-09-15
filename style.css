@@ -26,6 +26,7 @@ body {
 .heading {
   font-size: 40px;
   font-weight: 700;
+  text-align: center;
 }
 
 button {
@@ -66,4 +67,23 @@ button:active {
 
 .end-block{
   display: none;
+}
+
+@media screen and (max-width: 900px){
+  .main {
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+
+  #input {
+    width: 88%;
+  }
+
+  .button-form {
+    justify-content: center;
+    gap: 8%;
+  }
 }
