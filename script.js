@@ -44,10 +44,18 @@ input.addEventListener("compositionstart", (e) => {
   e.preventDefault()
   input.readOnly = true
   showInput()
+  setTimeout(() => {
+    input.readOnly = false
+  }, 20)
+  setTimeout(() => { input.focus }, 20)
 });
 
 input.addEventListener("keydown", (e) => {
   e.preventDefault()
   input.readOnly = true
   showInput()
+  setTimeout(() => {
+    input.readOnly = false
+  }, 20)
+  setTimeout(() => { input.focus }, 20)
 });
